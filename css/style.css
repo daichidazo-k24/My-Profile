@@ -1,0 +1,53 @@
+/* ベースの設定 */
+body {
+    overflow-x: hidden;
+    background-color: #f8f9fa; /* やや温かみのあるライトグレー */
+}
+
+/* 画像サイズをカードレイアウトに合わせて少し調整 */
+.profile-img {
+    width: 240px;
+    height: 240px;
+    object-fit: cover;
+    border-width: 4px !important;
+}
+
+/* Canvasのラッパーをウィジェット風に */
+.canvas-wrapper {
+    display: block;
+    width: 100%;
+    height: 200px; /* 80vhから変更し、スッキリとした高さに */
+    background: #ffffff;
+    position: relative;
+    cursor: pointer; /* クリックできることを示唆 */
+}
+
+#myCanvas {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+/* スキルバッジのスタイル */
+.skill-badge {
+    font-size: 0.95rem !important;
+    padding: 8px 16px !important;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.skill-badge:hover {
+    background-color: #0d6efd !important;
+    color: #ffffff !important;
+    transform: translateY(-2px);
+}
+
+/* ボタンのホバーエフェクト */
+.transition-all {
+    transition: all 0.3s ease;
+}
+
+.btn-outline-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(13, 110, 253, 0.2);
+}

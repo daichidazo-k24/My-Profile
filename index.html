@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>daichi | Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="bg-light">
+
+    <div class="container min-vh-100 d-flex justify-content-center align-items-center py-5">
+        <div class="card shadow-lg border-0 rounded-4 w-100" style="max-width: 1000px;">
+            <div class="card-body p-4 p-md-5">
+                <div class="row align-items-center gx-lg-5">
+                    
+                    <div class="col-md-4 text-center mb-4 mb-md-0">
+                        <img src="image/cat.jpg" alt="daichiのアイコン" class="rounded-circle img-thumbnail profile-img shadow-sm">
+                    </div>
+                    
+                    <div class="col-md-8 text-center text-md-start">
+                        <header>
+                            <h1 class="display-5 fw-bold text-dark mb-2">daichi</h1>
+                            <p class="text-secondary fs-5 mb-4">情報系の専門学校に通ってます！4年制で現在3年生です。</p>
+                        </header>
+
+                        <hr class="my-4 text-muted">
+
+                        <div class="row mb-4">
+                            <div class="col-lg-8 mb-4 mb-lg-0">
+                                <h5 class="text-secondary fw-bold text-uppercase small mb-3">
+                                    <i class="fa-solid fa-code me-2"></i>Languages
+                                </h5>
+                                <ul class="list-unstyled d-flex flex-wrap justify-content-center justify-content-md-start gap-2 mb-0">
+                                    <li class="badge rounded-pill bg-white text-primary border border-primary skill-badge">Java</li>
+                                    <li class="badge rounded-pill bg-white text-primary border border-primary skill-badge">C</li>
+                                    <li class="badge rounded-pill bg-white text-primary border border-primary skill-badge">Python</li>
+                                    <li class="badge rounded-pill bg-white text-primary border border-primary skill-badge">SQL</li>
+                                    <li class="badge rounded-pill bg-white text-primary border border-primary skill-badge">HTML</li>
+                                    <li class="badge rounded-pill bg-white text-primary border border-primary skill-badge">PHP</li>
+                                </ul>
+                            </div>
+
+                            <div class="col-lg-4 d-flex flex-column align-items-center align-items-lg-start">
+                                <h5 class="text-secondary fw-bold text-uppercase small mb-3">
+                                    <i class="fa-solid fa-address-card me-2"></i>Profile
+                                </h5>
+                                <a href="profile.html" class="text-decoration-none">
+                                    <button class="btn btn-outline-primary rounded-pill px-4 py-2 fw-bold transition-all">
+                                        About Me <i class="fa-solid fa-arrow-right ms-1"></i>
+                                    </button>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="mt-4">
+                            <h5 class="text-secondary fw-bold text-uppercase small mb-3 text-start">
+                                <i class="fa-solid fa-share-nodes me-2"></i>Social Links (Click the balls!)
+                            </h5>
+                            <div class="canvas-wrapper shadow-sm rounded-3 overflow-hidden border">
+                                <canvas id="myCanvas"></canvas>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        const canvas = document.getElementById('myCanvas');
+        const ctx = canvas.getContext('2d');
+
+        // resizeCanvas関数が2つあったため1つに統合し、バグ（QWEQWEQWE）を削除しました
+        function resizeCanvas() {
+            const rect = canvas.parentNode.getBoundingClientRect();
+            canvas.width = rect.width;
+            canvas.height = rect.height;
+
+            if (typeof balls !== 'undefined') {
+                balls.forEach(ball => {
+                    if (ball.x > canvas.width) ball.x = canvas.width / 2;
+                    if (ball.y > canvas.height) ball.y = canvas.height / 2;
+                });
+            }
+        }
+
+        window.addEventListener('load', () => {
+            resizeCanvas();
+            animate();
+        });
+
+        window.addEventListener('resize', resizeCanvas);
+
+        class Ball {
+            constructor(x, y, r, text, url, color) {
+                this.x = x;
+                this.y = y;
+                this.r = r;
+                this.text = text;
+                this.url = url;
+                this.color = color;
+                this.dx = (Math.random() - 0.5) * 2.0; // 少しスピードを上げました
+                this.dy = (Math.random() - 0.5) * 2.0;
+            }
+
+            draw() {
+                ctx.shadowColor = 'rgba(0, 0, 0, 0.1)';
+                ctx.shadowBlur = 10;
+                ctx.shadowOffsetY = 5;
+
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.r, 0, Math.PI * 2);
+                ctx.strokeStyle = "black";
+                ctx.lineWidth = 2;
+                ctx.fillStyle = "white"; // 背景と同化しないように中を白く塗る
+                ctx.fill();
+                ctx.stroke();
+
+                ctx.shadowColor = 'transparent';
+                ctx.fillStyle = "black";
+                ctx.font = "bold 15px sans-serif";
+                ctx.textAlign = "center";
+                ctx.textBaseline = "middle";
+                ctx.fillText(this.text, this.x, this.y);
+            }
+
+            update() {
+                if (this.x + this.r > canvas.width || this.x - this.r < 0) {
+                    this.dx *= -1;
+                    this.x = (this.x - this.r < 0) ? this.r : canvas.width - this.r;
+                }
+
+                if (this.y + this.r > canvas.height || this.y - this.r < 0) {
+                    this.dy *= -1;
+                    this.y = (this.y - this.r < 0) ? this.r : canvas.height - this.r;
+                }
+
+                this.x += this.dx;
+                this.y += this.dy;
+                this.draw();
+            }
+        }
+
+        const balls = [
+            new Ball(100, 100, 35, "X", "https://x.com/VKJTyqnEP2h6Pyy", "#4285F4"),
+            new Ball(200, 100, 35, "Github", "https://github.com/daichidazo-k24", "#949593")
+        ];
+
+        function resolveCollision(b1, b2) {
+            const dx = b2.x - b1.x;
+            const dy = b2.y - b1.y;
+            const distance = Math.sqrt(dx * dx + dy * dy);
+
+            if (distance < b1.r + b2.r) {
+                [b1.dx, b2.dx] = [b2.dx, b1.dx];
+                [b1.dy, b2.dy] = [b2.dy, b1.dy];
+
+                const overlap = (b1.r + b2.r - distance) / 2;
+                const nx = dx / distance;
+                const ny = dy / distance;
+                b1.x -= nx * overlap;
+                b1.y -= ny * overlap;
+                b2.x += nx * overlap;
+                b2.y += ny * overlap;
+            }
+        }
+
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            resolveCollision(balls[0], balls[1]);
+            balls.forEach(ball => ball.update());
+            requestAnimationFrame(animate);
+        }
+
+        canvas.addEventListener('click', (e) => {
+            const rect = canvas.getBoundingClientRect();
+            const mouseX = e.clientX - rect.left;
+            const mouseY = e.clientY - rect.top;
+
+            balls.forEach(ball => {
+                const dist = Math.sqrt((mouseX - ball.x) ** 2 + (mouseY - ball.y) ** 2);
+                if (dist < ball.r) {
+                    setTimeout(() => window.open(ball.url, '_blank'), 100);
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
