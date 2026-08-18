@@ -1,203 +1,159 @@
 <!DOCTYPE html>
 <html lang="ja">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>daichi | Portfolio</title>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-        <link rel="stylesheet" href="style.css">
-    </head>
-    <body class="bg-light">
-        <div class="container min-vh-100 d-flex justify-content-center align-items-center py-5">
-            <div class="card shadow-lg border-0 rounded-4 w-100" style="max-width: 1000px;">
-                <div class="card-body p-4 p-md-5">
-                    <div class="row align-items-center gx-lg-5">
-                        <div class="col-md-4 text-center mb-4 mb-md-0">
-                            <img src="image/cat.jpg" alt="daichiのアイコン"
-                                class="rounded-circle img-thumbnail profile-img shadow-sm">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="照喜名太智の自己紹介兼ポートフォリオ。サイバーセキュリティを学び、CTFやHardening、システム開発に取り組んでいます。">
+    <title>照喜名 太智 | Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body id="top">
+    <a class="skip-link" href="#main-content">本文へ移動</a>
+
+    <main id="main-content">
+        <section class="site-shell hero-section" aria-labelledby="hero-title">
+            <div class="hardware-panel hero-panel">
+                <div class="hero-layout">
+                    <div class="profile-frame">
+                        <img src="image/cat.jpg" alt="照喜名太智のプロフィールアイコン" class="profile-image">
+                    </div>
+                    <div class="hero-content">
+                        <p class="section-kicker">Cybersecurity Student / Portfolio</p>
+                        <h1 class="hero-title" id="hero-title">照喜名 太智 <span>Daichi Terukina</span></h1>
+                        <p class="hero-affiliation">国際電子ビジネス専門学校 情報スペシャリスト科<br>サイバーセキュリティコース 3年</p>
+                        <p class="hero-lead">攻撃・ビジネス・運用の多角的な視点で、社会を支えるセキュリティエンジニアを目指しています。</p>
+
+                        <div class="tag-list" aria-label="主な関心分野">
+                            <span class="focus-tag">ログ分析</span>
+                            <span class="focus-tag">インシデント対応</span>
+                            <span class="focus-tag">脆弱性診断</span>
+                            <span class="focus-tag">システム開発</span>
                         </div>
-                        <div class="col-md-8 text-center text-md-start">
-                            <header>
-                                <h1 class="display-5 fw-bold text-dark mb-2">daichi</h1>
-                                <p class="text-secondary fs-5 mb-4">情報系の専門学校に通ってます!!4年制で現在3年生です。</p>
-                            </header>
-                            <hr class="my-4 text-muted">
-                            <div class="row mb-4">
-                                <div class="col-lg-8 mb-4 mb-lg-0">
-                                    <h5 class="text-secondary fw-bold text-uppercase small mb-3">
-                                        <i class="fa-solid fa-code me-2"></i>Languages
-                                    </h5>
-                                    <ul
-                                        class="list-unstyled d-flex flex-wrap justify-content-center justify-content-md-start gap-2 mb-0">
-                                        <li
-                                            class="badge rounded-pill bg-white text-primary border border-primary skill-badge">
-                                            Java</li>
-                                        <li
-                                            class="badge rounded-pill bg-white text-primary border border-primary skill-badge">
-                                            C</li>
-                                        <li
-                                            class="badge rounded-pill bg-white text-primary border border-primary skill-badge">
-                                            Python</li>
-                                        <li
-                                            class="badge rounded-pill bg-white text-primary border border-primary skill-badge">
-                                            SQL</li>
-                                        <li
-                                            class="badge rounded-pill bg-white text-primary border border-primary skill-badge">
-                                            HTML</li>
-                                        <li
-                                            class="badge rounded-pill bg-white text-primary border border-primary skill-badge">
-                                            PHP</li>
-                                    </ul>
-                                </div>
-                                <div class="col-lg-4 d-flex flex-column align-items-center align-items-lg-start">
-                                    <h5 class="text-secondary fw-bold text-uppercase small mb-3">
-                                        <i class="fa-solid fa-address-card me-2"></i>Profile
-                                    </h5>
-                                    <a href="profile.html" class="text-decoration-none">
-                                        <button
-                                            class="btn btn-outline-primary rounded-pill px-4 py-2 fw-bold transition-all">
-                                            About Me <i class="fa-solid fa-arrow-right ms-1"></i>
-                                        </button>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="mt-4">
-                                <h5 class="text-secondary fw-bold text-uppercase small mb-3 text-start">
-                                    <i class="fa-solid fa-share-nodes me-2"></i>Social Links (Click the balls!)
-                                </h5>
-                                <div class="canvas-wrapper shadow-sm rounded-3 overflow-hidden border">
-                                    <canvas id="myCanvas"></canvas>
-                                </div>
-                            </div>
+                        <div class="tag-list" aria-label="主なプログラミング言語">
+                            <span class="tech-chip">Java</span><span class="tech-chip">C</span><span class="tech-chip">Python</span><span class="tech-chip">SQL</span><span class="tech-chip">HTML</span><span class="tech-chip">PHP</span>
                         </div>
+                        <a href="#about" class="action-button action-button-primary">詳しく見る <i class="fa-solid fa-arrow-down" aria-hidden="true"></i></a>
                     </div>
                 </div>
             </div>
-        </div>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-        <script>
-            const canvas = document.getElementById('myCanvas');
-            const ctx = canvas.getContext('2d');
 
-            function resizeCanvas() {
-                const rect = canvas.parentNode.getBoundingClientRect();
-                canvas.width = rect.width;
-                canvas.height = rect.height;
+            <div class="metric-grid" aria-label="ポートフォリオ概要">
+                <div class="metric-card"><span class="metric-number">5</span><div><strong>取得資格</strong><span>情報セキュリティ・IT基礎・DB</span></div></div>
+                <div class="metric-card"><span class="metric-number">7</span><div><strong>学外活動</strong><span>CTF・Hardening・応募課題</span></div></div>
+                <div class="metric-card"><span class="metric-number">3</span><div><strong>制作物</strong><span>Java・Web・地図アプリ</span></div></div>
+            </div>
+        </section>
 
-                if (typeof balls !== 'undefined') {
-                    balls.forEach(ball => {
-                        if (ball.x > canvas.width) ball.x = canvas.width / 2;
-                        if (ball.y > canvas.height) ball.y = canvas.height / 2;
-                    });
-                }
-            }
+        <section class="site-shell section-gap" id="about" aria-labelledby="about-title">
+            <div class="hardware-panel content-panel">
+                <div class="panel-heading"><p class="section-kicker">About</p><h2 id="about-title">学びを、学外の実践へ。</h2></div>
+                <div class="about-grid">
+                    <div>
+                        <p class="body-copy">DB・サーバ構築・セキュリティなど、IT分野の知識を学内で幅広く学んでいます。座学で得た知識をアウトプットするため、CTF大会、脆弱性診断コンテスト、Hardeningなどの学外活動にも積極的に参加しています。</p>
+                        <p class="body-copy">将来は、攻撃者だけでなくビジネスや運用の視点も持ち、社会に貢献できるセキュリティエンジニアになることが目標です。特にSOCアナリストやブルーチーム業務に関心があります。</p>
+                    </div>
+                    <aside class="inset-panel" aria-label="目標と趣味">
+                        <h3><i class="fa-solid fa-compass" aria-hidden="true"></i>目指す職種</h3>
+                        <p>SOCアナリスト / セキュリティエンジニア</p>
+                        <h3><i class="fa-solid fa-heart" aria-hidden="true"></i>趣味</h3>
+                        <p>ルアーフィッシング、ランニング、ゲーム、絵・グラフィックデザイン</p>
+                        <a href="fish.html" class="action-button action-button-secondary">釣果ギャラリー <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+                    </aside>
+                </div>
+            </div>
+        </section>
 
-            window.addEventListener('load', () => {
-                resizeCanvas();
-                animate();
-            });
+        <section class="site-shell section-gap" id="skills" aria-labelledby="skills-title">
+            <div class="hardware-panel content-panel">
+                <div class="panel-heading"><p class="section-kicker">Skills</p><h2 id="skills-title">技術・学習領域</h2><p>学習している分野、関心領域、制作で使用した技術です。</p></div>
+                <div class="skills-grid">
+                    <article class="module-panel">
+                        <div class="module-icon"><i class="fa-solid fa-code" aria-hidden="true"></i></div>
+                        <div><h3>Programming</h3><div class="tag-list"><span class="tech-chip">Java</span><span class="tech-chip">C</span><span class="tech-chip">Python</span><span class="tech-chip">SQL</span><span class="tech-chip">HTML</span><span class="tech-chip">PHP</span><span class="tech-chip">TypeScript</span></div></div>
+                    </article>
+                    <article class="module-panel">
+                        <div class="module-icon"><i class="fa-solid fa-shield-halved" aria-hidden="true"></i></div>
+                        <div><h3>Security / Infrastructure</h3><div class="tag-list"><span class="tech-chip">セキュリティ</span><span class="tech-chip">データベース</span><span class="tech-chip">ネットワーク</span><span class="tech-chip">サーバ構築</span><span class="tech-chip">ログ分析</span><span class="tech-chip">脆弱性診断</span></div></div>
+                    </article>
+                    <article class="module-panel module-panel-wide">
+                        <div class="module-icon"><i class="fa-solid fa-screwdriver-wrench" aria-hidden="true"></i></div>
+                        <div><h3>制作で利用した技術</h3><div class="tag-list"><span class="tech-chip">JavaFX</span><span class="tech-chip">Maven</span><span class="tech-chip">JSON</span><span class="tech-chip">RSA</span><span class="tech-chip">AES</span><span class="tech-chip">Vite</span><span class="tech-chip">Turf.js</span><span class="tech-chip">Supabase</span><span class="tech-chip">MapLibre GL JS</span><span class="tech-chip">Cloudflare Workers</span><span class="tech-chip">GitHub Pages</span></div></div>
+                    </article>
+                </div>
+            </div>
+        </section>
 
-            window.addEventListener('resize', resizeCanvas);
+        <section class="site-shell section-gap" id="qualifications" aria-labelledby="qualifications-title">
+            <div class="hardware-panel content-panel">
+                <div class="panel-heading panel-heading-split"><div><p class="section-kicker">Qualifications</p><h2 id="qualifications-title">取得資格</h2></div><p class="study-note"><i class="fa-solid fa-book-open" aria-hidden="true"></i>情報処理安全確保支援士の取得に向けて勉強中</p></div>
+                <div class="qualification-list">
+                    <div class="qualification-item"><time datetime="2024-10">2024.10</time><span>情報セキュリティマネジメント試験</span></div>
+                    <div class="qualification-item"><time datetime="2025-08">2025.08</time><span>Oracle Certified Java Programmer, Bronze SE 11</span></div>
+                    <div class="qualification-item"><time datetime="2025-08">2025.08</time><span>LinuC Level 1 Exam 101</span></div>
+                    <div class="qualification-item"><time datetime="2026-02">2026.02</time><span>OSS-DB Silver</span></div>
+                    <div class="qualification-item"><time datetime="2026-03">2026.03</time><span>基本情報技術者試験</span></div>
+                </div>
+            </div>
+        </section>
 
-            class Ball {
-                constructor(x, y, r, text, url, color) {
-                    this.x = x;
-                    this.y = y;
-                    this.r = r;
-                    this.text = text;
-                    this.url = url;
-                    this.color = color;
-                    this.dx = (Math.random() - 0.5) * 2.0; // スピード
-                    this.dy = (Math.random() - 0.5) * 2.0;
-                }
+        <section class="site-shell section-gap" id="activities" aria-labelledby="activities-title">
+            <div class="hardware-panel content-panel">
+                <div class="panel-heading"><p class="section-kicker">Activities</p><h2 id="activities-title">学外活動</h2><p>学内で得た知識を確かめ、実践へつなげるための取り組みです。</p></div>
+                <ol class="activity-timeline">
+                    <li><time datetime="2025-09">2025.09 - 11</time><div><strong>MBSD Cybersecurity Challenges 2025</strong><span>選考課題</span></div></li>
+                    <li><time datetime="2025-11">2025.11</time><div><strong>総務省CTF2025</strong></div></li>
+                    <li><time datetime="2026-02">2026.02</time><div><strong>防衛省CTF2026</strong></div></li>
+                    <li><time datetime="2026-04">2026.04 - 05</time><div><strong>セキュリティ・キャンプ2026 全国大会</strong><span>応募課題</span></div></li>
+                    <li><time datetime="2026-05">2026.05</time><div><strong>0509 First Attack</strong><span>Micro Hardening V3</span></div></li>
+                    <li><time datetime="2026-06">2026.06</time><div><strong>Micro Hardening Basic</strong></div></li>
+                    <li><time datetime="2026-07">2026.07</time><div><strong>Hardening Designers Conference 2026</strong></div></li>
+                </ol>
+                <div class="inset-panel activity-note"><h3><i class="fa-solid fa-magnifying-glass-chart" aria-hidden="true"></i>実践から得た関心</h3><p>脆弱性診断コンテストでは、初期侵入から診断、対策レポートの作成までを経験しました。攻撃手法とその対策に加え、相手へ伝わるレポート作成にも関心を持っています。</p></div>
+            </div>
+        </section>
 
-                draw() {
-                    ctx.shadowColor = 'rgba(0, 0, 0, 0.1)';
-                    ctx.shadowBlur = 10;
-                    ctx.shadowOffsetY = 5;
+        <section class="site-shell section-gap" id="projects" aria-labelledby="projects-title">
+            <div class="hardware-panel content-panel">
+                <div class="panel-heading"><p class="section-kicker">Projects</p><h2 id="projects-title">制作物</h2><p>課題や興味を起点に、技術選定から実装・公開まで取り組んだ制作物です。</p></div>
+                <div class="project-grid">
+                    <article class="project-card">
+                        <div class="module-icon"><i class="fa-solid fa-key" aria-hidden="true"></i></div><p class="project-type">Desktop Application</p><h3>DaichiPassword-ver.1</h3>
+                        <p>RSAとAESのハイブリッド暗号方式を採用したパスワード管理ツールです。管理するパスワードが増えたことをきっかけに開発しました。</p>
+                        <h4>工夫・学び</h4><p class="small-copy">RSA暗号化を既存ライブラリに頼らず自力で実装し、暗号化ロジックへの理解を深めました。</p>
+                        <div class="tag-list" aria-label="使用技術"><span class="tech-chip">Java</span><span class="tech-chip">JavaFX</span><span class="tech-chip">Maven</span><span class="tech-chip">JSON</span><span class="tech-chip">RSA</span><span class="tech-chip">AES</span></div>
+                    </article>
+                    <article class="project-card">
+                        <div class="module-icon"><i class="fa-solid fa-map-location-dot" aria-hidden="true"></i></div><p class="project-type">Web Application</p><h3>MAP</h3>
+                        <p>ルート機能を備えた、探索型の沖縄限定MAPです。AIを活用しながら開発し、技術選定、環境変数の設定、細かな仕様調整は自分で行いました。</p>
+                        <h4>工夫・学び</h4><p class="small-copy">バイブコーディングで開発できる現在の限界を確認する目的で制作。機能改善とともに実装内容への理解を深めています。</p>
+                        <div class="tag-list" aria-label="使用技術"><span class="tech-chip">TypeScript</span><span class="tech-chip">Vite</span><span class="tech-chip">Turf.js</span><span class="tech-chip">Supabase</span><span class="tech-chip">MapLibre GL JS</span><span class="tech-chip">Cloudflare Workers</span><span class="tech-chip">外部API</span></div>
+                        <p class="small-copy access-note">Demoのアクセスパスワード: <code>KBC</code>（API利用制限のため）</p>
+                    </article>
+                    <article class="project-card project-card-wide">
+                        <div class="module-icon"><i class="fa-solid fa-address-card" aria-hidden="true"></i></div><div><p class="project-type">Web Site</p><h3>My-Profile</h3><p>HTML、CSS、JavaScriptで制作した静的な自己紹介サイトです。外部公開への第一歩として挑戦し、GitHub Pagesの設定方法とRepositoryの使い方を学びました。</p><div class="tag-list" aria-label="使用技術"><span class="tech-chip">HTML</span><span class="tech-chip">CSS</span><span class="tech-chip">JavaScript</span><span class="tech-chip">GitHub Pages</span></div></div>
+                    </article>
+                </div>
+            </div>
+        </section>
 
-                    ctx.beginPath();
-                    ctx.arc(this.x, this.y, this.r, 0, Math.PI * 2);
-                    ctx.strokeStyle = "black";
-                    ctx.lineWidth = 2;
-                    ctx.fillStyle = "white"; // 背景と同化しないように中を白く
-                    ctx.fill();
-                    ctx.stroke();
+        <section class="site-shell section-gap final-section" id="links" aria-labelledby="links-title">
+            <div class="hardware-panel content-panel">
+                <div class="panel-heading"><p class="section-kicker">Links</p><h2 id="links-title"><i class="fa-solid fa-share-nodes" aria-hidden="true"></i>Social Link</h2><p>動くボールをクリックすると、GitHubや各制作物のページを新しいタブで開きます。</p></div>
+                <div class="social-ball-area" id="socialBallArea" aria-label="外部リンク一覧"></div>
+                <div class="social-controls" role="group" aria-labelledby="socialSpeedLabel">
+                    <span class="social-speed-label" id="socialSpeedLabel">速度</span>
+                    <div class="speed-selector">
+                        <button class="speed-button" id="speedDown" type="button" aria-label="ボールの速度を25%下げる"><span class="speed-arrow speed-arrow-left" aria-hidden="true"></span></button>
+                        <output class="speed-output" id="socialSpeedValue" aria-live="polite">100%</output>
+                        <button class="speed-button" id="speedUp" type="button" aria-label="ボールの速度を25%上げる"><span class="speed-arrow speed-arrow-right" aria-hidden="true"></span></button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 
-                    ctx.shadowColor = 'transparent';
-                    ctx.fillStyle = "black";
-                    ctx.font = "bold 15px sans-serif";
-                    ctx.textAlign = "center";
-                    ctx.textBaseline = "middle";
-                    ctx.fillText(this.text, this.x, this.y);
-                }
-
-                update() {
-                    if (this.x + this.r > canvas.width || this.x - this.r < 0) {
-                        this.dx *= -1;
-                        this.x = (this.x - this.r < 0) ? this.r : canvas.width - this.r;
-                    }
-
-                    if (this.y + this.r > canvas.height || this.y - this.r < 0) {
-                        this.dy *= -1;
-                        this.y = (this.y - this.r < 0) ? this.r : canvas.height - this.r;
-                    }
-
-                    this.x += this.dx;
-                    this.y += this.dy;
-                    this.draw();
-                }
-            }
-
-            const balls = [
-                // Xのボール
-                // new Ball(100, 100, 35, "X", "https://x.com/アカウント", "#4285F4"),
-                new Ball(200, 100, 35, "Github", "https://github.com/daichidazo-k24", "#949593")
-            ];
-
-            function resolveCollision(b1, b2) {
-                const dx = b2.x - b1.x;
-                const dy = b2.y - b1.y;
-                const distance = Math.sqrt(dx * dx + dy * dy);
-
-                if (distance < b1.r + b2.r) {
-                    [b1.dx, b2.dx] = [b2.dx, b1.dx];
-                    [b1.dy, b2.dy] = [b2.dy, b1.dy];
-
-                    const overlap = (b1.r + b2.r - distance) / 2;
-                    const nx = dx / distance;
-                    const ny = dy / distance;
-                    b1.x -= nx * overlap;
-                    b1.y -= ny * overlap;
-                    b2.x += nx * overlap;
-                    b2.y += ny * overlap;
-                }
-            }
-
-            function animate() {
-                ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-                // ボールが2つ以上ある場合のみ衝突判定を行う
-                if (balls.length >= 2) {
-                    resolveCollision(balls[0], balls[1]);
-                }
-
-                balls.forEach(ball => ball.update());
-                requestAnimationFrame(animate);
-            }
-            canvas.addEventListener('click', (e) => {
-                const rect = canvas.getBoundingClientRect();
-                const mouseX = e.clientX - rect.left;
-                const mouseY = e.clientY - rect.top;
-
-                balls.forEach(ball => {
-                    const dist = Math.sqrt((mouseX - ball.x) ** 2 + (mouseY - ball.y) ** 2);
-                    if (dist < ball.r) {
-                        setTimeout(() => window.open(ball.url, '_blank'), 100);
-                    }
-                });
-            });
-        </script>
-    </body>
+    <footer class="footer-bar"><p>© 2026 Daichi Terukina Portfolio</p></footer>
+    <script src="js/social-links.js"></script>
+</body>
 </html>
