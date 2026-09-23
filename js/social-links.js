@@ -34,20 +34,11 @@ const socialLinks = [
 ];
 
 const ballArea = document.getElementById("socialBallArea");
-const speedDownButton = document.getElementById("speedDown");
-const speedUpButton = document.getElementById("speedUp");
-const speedOutput = document.getElementById("socialSpeedValue");
 
 if (ballArea) {
     const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     const ballDiameter = 88;
     const ballRadius = ballDiameter / 2;
-    const baseSpeedMultiplier = 1.4;
-    const minimumSpeedLevel = 0.25;
-    const maximumSpeedLevel = 2;
-    const speedStep = 0.25;
-    let speedLevel = 1;
-    let speedMultiplier = baseSpeedMultiplier;
     let animationFrameId;
 
     const balls = socialLinks.map((link, index) => {
@@ -142,8 +133,8 @@ if (ballArea) {
             if (ball.paused) return;
             if (ball.x + ballRadius >= width || ball.x - ballRadius <= 0) ball.dx *= -1;
             if (ball.y + ballRadius >= height || ball.y - ballRadius <= 0) ball.dy *= -1;
-            ball.x += ball.dx * speedMultiplier;
-            ball.y += ball.dy * speedMultiplier;
+            ball.x += ball.dx;
+            ball.y += ball.dy;
         });
 
         resolveCollisions();
@@ -158,34 +149,7 @@ if (ballArea) {
         ball.element.addEventListener("blur", () => { ball.paused = false; });
     });
 
-    function updateSpeedDisplay() {
-        speedMultiplier = baseSpeedMultiplier * speedLevel;
-        if (speedOutput) {
-            const percentage = `${Math.round(speedLevel * 100)}%`;
-            speedOutput.value = percentage;
-            speedOutput.textContent = percentage;
-        }
-        if (speedDownButton) speedDownButton.disabled = speedLevel <= minimumSpeedLevel;
-        if (speedUpButton) speedUpButton.disabled = speedLevel >= maximumSpeedLevel;
-    }
-
-    function changeSpeed(amount) {
-        const nextLevel = Math.min(maximumSpeedLevel, Math.max(minimumSpeedLevel, speedLevel + amount));
-        speedLevel = Math.round(nextLevel * 100) / 100;
-        updateSpeedDisplay();
-    }
-
-    function resetSpeed() {
-        speedLevel = 1;
-        updateSpeedDisplay();
-    }
-
-    if (speedDownButton) speedDownButton.addEventListener("click", () => changeSpeed(-speedStep));
-    if (speedUpButton) speedUpButton.addEventListener("click", () => changeSpeed(speedStep));
-
     window.addEventListener("resize", clampBalls);
-    window.addEventListener("pageshow", resetSpeed);
-    resetSpeed();
     placeBalls();
 
     if (!prefersReducedMotion && balls.length > 0) {
